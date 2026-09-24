@@ -17,9 +17,10 @@ export const site = {
 };
 
 export const about = [
+  "Hi there!",
   "I'm an early-career software engineer who came to tech from sales and customer support. I've built my foundation through formal education, contract work, and a lot of self-directed learning.",
   "I've built and deployed applications, modernized client tech stacks, and worked across the full project lifecycle, from planning through testing, debugging, and CI/CD. I use AI-assisted development in my daily workflow, and I'm always eager to pick up new tools and build something real with them.",
-  "I'm comfortable working independently, but I thrive in collaborative environments where I can support my teammates and learn from more experienced engineers. I believe technical skill is only part of being a great engineer; communicating clearly with teammates and clients matters just as much. I aspire to be a dependable engineer my team looks forward to working with every day.",
+  "I'm comfortable working independently, but I thrive in collaborative environments where I can support my teammates and learn from more experienced engineers as we innovate together. I believe technical skill is only part of being a great engineer; fostering an environment where everyone can contribute, learn, and improve their craft is equally important. I strive to be a developer that is dependable and someone my team looks forward to working with everyday.",
  ];
 
 export const skills = [
