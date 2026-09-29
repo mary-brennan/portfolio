@@ -57,9 +57,36 @@ html {
   background: color-mix(in oklab, var(--primary) 35%, transparent);
 }
 
+/* Unlayered, so it beats components' `outline-none` utilities. The default
+   ring (ring/30) is too faint on the dark background to meet 3:1. */
+:focus-visible:not([tabindex="-1"]) {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+/* <RevealOnScroll>: visible but blurred while the page is scrolled to the
+   top, then comes into focus once the user scrolls. Only when scripts run, so
+   it can never get stuck blurry. It's purely visual, so screen readers are
+   unaffected. */
+@media (scripting: enabled) {
+  .reveal-on-scroll {
+    transition:
+      filter 0.6s ease-out,
+      opacity 0.6s ease-out;
+  }
+
+  /* :focus-within: a keyboard user tabbing into it always sees what's focused */
+  .reveal-on-scroll[data-revealed="false"]:not(:focus-within) {
+    filter: blur(6px);
+    opacity: 0.6;
+    /* blurred text isn't readable, so don't invite selecting or clicking it */
+    user-select: none;
   }
 }
 
