@@ -6,28 +6,27 @@ export const site = {
   role: "Software Engineer",
   location: "Sacramento, CA",
   tagline:
-    "I build fast, accessible interfaces with React, Next.js and TypeScript — from design systems to desktop apps that run in locked-down environments.",
+    "I build fast, accessible interfaces with React, Next.js and TypeScript. I'm looking for my next role, where I can keep growing in any area of software.",
   // TODO: replace with your real links
   links: {
     github: "https://github.com/mary-brennan",
     linkedin: "https://www.linkedin.com/in/mary-b-b85a3b249/",
-    email: "mbrennan2401@gmail.com",
+    email: "marymb2401@gmail.com",
   },
-  openToWork: true,
 };
 
 export const about = [
   "Hi there!",
   "I'm an early-career software engineer who came to tech from sales and customer support. I've built my foundation through formal education, contract work, and a lot of self-directed learning.",
   "I've built and deployed applications, modernized client tech stacks, and worked across the full project lifecycle, from planning through testing, debugging, and CI/CD. I use AI-assisted development in my daily workflow, and I'm always eager to pick up new tools and build something real with them.",
-  "I'm comfortable working independently, but I thrive in collaborative environments where I can support my teammates and learn from more experienced engineers as we innovate together. I believe technical skill is only part of being a great engineer; fostering an environment where everyone can contribute, learn, and improve their craft is equally important. I strive to be a developer that is dependable and someone my team looks forward to working with everyday.",
+  "I'm comfortable working independently, but I do my best work as part of a team. At Clutch, I was one of three engineers. On a team that small, collaboration was what made it possible for us to develop and ship our product to our clients every week. I wrote internal guides so my teammates didn't have to dig through dense client documentation, and I learned from my senior engineers as we solved problems together. That taught me technical skill is only part of being a great engineer; fostering an environment where everyone can contribute, learn, and improve their craft is equally important. I strive to be a dependable developer and someone my team looks forward to working with every day.",
  ];
 
 // Short intro line under each page title. Edit freely.
 export const pageIntros = {
   projects: "A selection of things I've built professionally and personally.",
   experience: "Where I've worked, what I've studied, and the tools I use every day.",
-  contact: "I'm looking for my next role. The fastest way to reach me is email.",
+  contact: "I'm looking for my next role. The fastest way to reach me is via email or linkedin.",
 };
 
 // Grouped by category. Keys are shown as the group labels.

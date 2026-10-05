@@ -14,10 +14,10 @@ You are a senior web designer and front-end engineer. You know shadcn/ui, Tailwi
 
 | Route | Purpose | Contents |
 | --- | --- | --- |
-| `/` | First impression | "Open to new roles" badge, name (h1), role · location, one-sentence tagline, photo. On `md`+ the intro fills the first screen so there is one focal point. Then the About section (no eyebrow; "Hi there!" is its h2), followed by the CTAs: View projects (primary) + Get in touch (outline) |
+| `/` | First impression | Name (h1), role · location, one-sentence tagline, photo. On `md`+ the intro fills the first screen so there is one focal point. Then the About section (no eyebrow; "Hi there!" is its h2), followed by the CTAs: View projects (primary) + Get in touch (outline) |
 | `/projects` | Proof of work | `PageHeader` + grid of project `Card`s (2 cols from `sm`), tags as primary-tinted `Badge`s; cards with `href` are external links with a ↗ |
 | `/experience` | Background | `PageHeader`, "Work & education" timeline first (`border-l` line + dots, each entry a borderless `Card`, dates in a ghost mono `Badge`), then Skills (`secondary` mono `Badge`s) |
-| `/contact` | Conversion | `PageHeader` with pitch, the email address as a large visible link, location, then "Say hello" (primary) + LinkedIn/GitHub (outline) |
+| `/contact` | Conversion | `PageHeader` with pitch, then "Email me" (primary, `mailto:`) + LinkedIn/GitHub (outline), then a small `CopyEmail` line (address in mono + copy button, for visitors without a mail client) and location |
 
 `not-found.tsx` gives a 404 in the same style. Page intro lines live in `pageIntros` in `site.ts`. Keep this structure. A portfolio should have few pages, a clear primary action on each, and no dead ends: every page should make it easy to reach Projects or Contact.
 
@@ -39,7 +39,7 @@ You are a senior web designer and front-end engineer. You know shadcn/ui, Tailwi
 ## Theme
 
 - **Dark only.** `<html>` has the `dark` class and `color-scheme: dark`. Design and check contrast against the `.dark` tokens.
-- Palette: neutral zinc-tinted background (`oklch(0.141 0.005 285.8)`), `card` one step lighter, a single **cyan/teal accent** as `--primary` (`oklch(0.715 0.143 215.2)`). The only other color is emerald, used just for the "open to work" status.
+- Palette: neutral zinc-tinted background (`oklch(0.141 0.005 285.8)`), `card` one step lighter, a single **cyan/teal accent** as `--primary` (`oklch(0.715 0.143 215.2)`).
 - Use semantic tokens only: `bg-background`, `bg-card`, `text-foreground`, `text-muted-foreground`, `text-primary`, `border` / `ring-foreground/10`. Never use raw hex or Tailwind palette colors like `text-sky-400` for UI chrome.
 - Primary tints come from opacity modifiers: `bg-primary/15 text-primary` for tags, `ring-primary/40` for hover, and `color-mix(in oklch, var(--primary) …)` for glows.
 - Typography: Inter (`font-sans`, `font-heading`) for everything, and Geist Mono (`font-mono`) for small technical details such as eyebrows, skills and dates. Two weights do most of the work: `font-semibold` for display text, `font-medium` for titles.
@@ -66,7 +66,7 @@ You are a senior web designer and front-end engineer. You know shadcn/ui, Tailwi
 - **Images:** meaningful images get descriptive `alt`; decorative ones get `alt=""` or `aria-hidden`. Use `next/image` with explicit dimensions.
 - **Responsive:** works from 320px wide at 200% zoom with no horizontal scroll. Don't hide navigation items on small screens. If the nav no longer fits, use a menu (shadcn `Sheet` or `DropdownMenu`) instead of `hidden`.
 - **Decoration:** purely visual marks (status dots, timeline dots, ↗ arrows, the monogram period) get `aria-hidden`. Sections are labelled by their h2 via `aria-labelledby`.
-- **Motion and color:** never convey meaning by color alone (the "Open to new roles" badge has text, keep it that way), and honor reduced motion.
+- **Motion and color:** never convey meaning by color alone, and honor reduced motion.
 - **Metadata:** every route exports `metadata` with a unique `title`, which the template turns into `"<Page> — Mary Brennan"`. `<html lang="en">` stays.
 
 ## Known gaps

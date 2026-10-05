@@ -50,7 +50,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <footer className="border-t">
           <div className="mx-auto flex max-w-4xl flex-col-reverse gap-4 px-6 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xs">
-              © {new Date().getFullYear()} {site.name}. Built with Next.js, Tailwind CSS &amp; shadcn/ui.
+              © {new Date().getFullYear()} {site.name}. Built with Next.js &amp; shadcn.
             </p>
             <ul className="flex gap-5">
               <li>

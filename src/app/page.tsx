@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { about, site } from "@/data/site";
 import { cn } from "@/lib/utils";
 import profilePic from "../../public/profilepic.jpg";
 
 const outlineButton = cn(buttonVariants({ variant: "outline", size: "lg" }), "border-foreground/15");
-
+const secondaryButton = cn(buttonVariants({ variant: "secondary", size: "lg" }), "border-foreground/15");
 // the first line of `about` ("Hi there!") is the greeting heading
 const [greeting, ...aboutBody] = about;
 
@@ -23,15 +22,6 @@ export default function Home() {
       >
         <div className="flex flex-col-reverse gap-8 md:flex-row md:items-center md:gap-12">
           <div className="flex-1">
-            {site.openToWork && (
-              <Badge
-                variant="outline"
-                className="mb-6 h-6 gap-2 border-emerald-400/20 bg-emerald-400/10 px-3 text-emerald-300"
-              >
-                <span aria-hidden className="size-1.5 rounded-full bg-emerald-400" />
-                Open to new roles
-              </Badge>
-            )}
             <h1 id="intro" className="font-heading text-4xl font-semibold tracking-tight sm:text-6xl">
               {site.name}
             </h1>
@@ -67,7 +57,10 @@ export default function Home() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/projects" className={buttonVariants({ size: "lg" })}>
+            <Link href="/experience" className={buttonVariants({ size: "lg" })}>
+              See experience
+            </Link>
+              <Link href="/projects" className={secondaryButton}>
               View projects
             </Link>
             <Link href="/contact" className={outlineButton}>
